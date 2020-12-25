@@ -4,4 +4,5 @@ module.exports = {
     testPathIgnorePatterns: ['/node_modules/', 'lib'],
     testMatch: ['**/tests/*.test.js'],
     collectCoverage: true,
+
 }
