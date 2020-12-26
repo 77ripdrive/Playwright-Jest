@@ -1,6 +1,6 @@
 # Playwright-Jest
 [![jest](https://facebook.github.io/jest/img/jest-badge.svg)](https://github.com/facebook/jest)
-[![NPM](https://img.shields.io/badge/npm-v%200.1.0-green)](https://github.com/77ripdrive/Playwright-Jest)
+[![NPM](https://img.shields.io/badge/npm-v%200.1.1-green)](https://github.com/77ripdrive/Playwright-Jest)
 * Required: NodeJS
 
 MVC Playwright test project with Jest
