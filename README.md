@@ -14,3 +14,5 @@ To  run  All tests
 
 `npm run test`
 
+# [Docker with Playwright](https://github.com/microsoft/playwright/tree/master/docs/docker#end-to-end-tests)
+
