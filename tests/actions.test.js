@@ -17,7 +17,7 @@ describe('Actions at mainPage', () => {
 
     it('should be  "todos"', async() => {
         await expect(page).toEqualText('h1', "todos");
-        await page.screenshot({ path: 'artifacts/actions.png' });
+        await page.screenshot({ path: './artifacts/actions.png' });
     });
 
     afterAll(async() => {

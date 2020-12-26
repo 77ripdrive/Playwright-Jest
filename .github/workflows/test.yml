@@ -1,29 +1,20 @@
-name: Node.js CI
-
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches:
+    - master
 
 jobs:
-  build:
-
-    runs-on: windows-latest
-     steps:
+  e2e-tests:
+    runs-on: windows-latest  # or macos-latest, ubuntu-latest
+    steps:
       - uses: actions/checkout@v2
-
       - uses: actions/setup-node@v1
-
       - uses: microsoft/playwright-github-action@v1
-
-      - name: Install dependencies and run tests
-        run: npm install && npm test
+      - run: npm install
+      - run: npm test
       - uses: actions/upload-artifact@v2
-        if: ${{ always() }}
         with:
-        name: test-artifacts
-        path: artifacts/*.*
- 
+          name: artifacts
+          path: ./artifacts/*.*
  
     
