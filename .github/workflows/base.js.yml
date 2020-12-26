@@ -1,0 +1,54 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 14.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    - run: npm install
+    - run: npm test 
+      
+    - name: Create artifact files
+      run: |
+        mkdir -p path/to/dir-1
+        echo "Lorem ipsum dolor sit amet" > path/to/dir-1/file1.txt
+        # Upload a single file artifact
+    - name: 'Upload artifact #1'
+      uses: ./
+      with:
+        name: 'Artifact-A'
+        path: path/to/dir-1/file1.txt
+    
+    # Download Artifact #1 and verify the correctness of the content
+    - name: 'Download artifact #1'
+      uses: actions/download-artifact@v1
+      with:
+        name: 'Artifact-A'
+        path: some/new/path
+
+    - name: 'Verify Artifact #1'
+      run: |
+        $file = "some/new/path/file1.txt"
+        if(!(Test-Path -path $file))
+        {
+            Write-Error "Expected file does not exist"
+        }
+        if(!((Get-Content $file) -ceq "Lorem ipsum dolor sit amet"))
+        {
+            Write-Error "File contents of downloaded artifact are incorrect"
+        }
+      shell: pwsh   
