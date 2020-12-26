@@ -8,14 +8,14 @@ describe("Actions with TodoMVC", () => {
         await expect(page).toHaveSelector('"todos"', {
             state: "attached"
         })
-        await page.screenshot({ path: 'screenshots/todomvc-start.png' });
+        await page.screenshot({ path: 'artifacts/todomvc-start.png' });
     })
 
     it("should add new todo to the list", async() => {
         await page.type('.new-todo', 'Open Windows ');
         await page.keyboard.press('Enter');
         await expect(page).toHaveText('.todo-list li:nth-child(1) label', 'Open Windows');
-        await page.screenshot({ path: 'screenshots/todomvc-list-todo.png' });
+        await page.screenshot({ path: 'artifacts/todomvc-list-todo.png' });
     })
 
 })

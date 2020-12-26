@@ -1,6 +1,0 @@
-{
-    "pageTitle": "Todos actions",
-    "outputPath": "../test-report/index.html",
-    "includeFailureMsg": false,
-    "styleOverridePath": "../teststyle.css"
-}
