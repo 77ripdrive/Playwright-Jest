@@ -1,8 +1,9 @@
 {
     "name": "playwright-mvc",
-    "version": "1.0.0",
-    "description": "Playwright automation test framwork",
+    "version": "0.1.0",
+    "description": "Test Project with Playwright and Jest",
     "main": "index.js",
+    "repository": "https://github.com/77ripdrive/Playwright-Jest",
     "scripts": {
         "test": "jest"
     },
