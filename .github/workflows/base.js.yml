@@ -22,7 +22,7 @@ jobs:
     - run: npm install
     - run: npm test 
       
-    - name: Create artifact files
+    - name: Create artifact files after check
       run: |
         mkdir -p path/to/dir-1
         echo "Lorem ipsum dolor sit amet" > path/to/dir-1/file1.txt
