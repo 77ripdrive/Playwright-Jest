@@ -6,9 +6,9 @@ describe("Actions with TodoMVC", () => {
         await page.goto("http://todomvc-app-for-testing.surge.sh/");
         await expect(page).toEqualText("h1", "todos")
         await expect(page).toHaveSelector('"todos"', {
-            state: "attached"
-        })
-        await page.screenshot({ path: `./artifacts/screenshot-todos.png` });
+                state: "attached"
+            })
+            // await page.screenshot({ path: `./artifacts/screenshot-todos.png` });
     })
 
 
@@ -16,7 +16,7 @@ describe("Actions with TodoMVC", () => {
         await page.type('.new-todo', 'Open Windows ');
         await page.keyboard.press('Enter');
         await expect(page).toHaveText('.todo-list li:nth-child(1) label', 'Open Windows');
-        await page.screenshot({ path: `./artifacts/screenshot-todos-list.png` });
+        // await page.screenshot({ path: `./artifacts/screenshot-todos-list.png` });
     })
 
 })
