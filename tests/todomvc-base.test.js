@@ -19,4 +19,10 @@ describe("Actions with TodoMVC", () => {
         await page.screenshot({ path: `./artifacts/screenshot-todos-list.png` });
     })
 
+
+    afterAll(async() => {
+        await browser.close();
+        done();
+    })
+
 })
