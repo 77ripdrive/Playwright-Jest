@@ -1,4 +1,6 @@
 # Playwright-Jest
+
+![.github/workflows/test.yml](https://github.com/77ripdrive/Playwright_Jest/workflows/.github/workflows/test.yml/badge.svg)
 [![jest](https://facebook.github.io/jest/img/jest-badge.svg)](https://github.com/facebook/jest)
 [![NPM](https://img.shields.io/badge/npm-v%200.1.1-green)](https://github.com/77ripdrive/Playwright-Jest)
 * Required: NodeJS
