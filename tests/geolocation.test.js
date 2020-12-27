@@ -1,4 +1,4 @@
-jest.setTimeout(40 * 1000)
+jest.setTimeout(60 * 1000)
 
 describe("Actions with Geolocation", () => {
 
@@ -13,6 +13,7 @@ describe("Actions with Geolocation", () => {
             colorScheme: 'dark',
         });
         const page = await context.newPage();
+        await page.waitForTimeout(3000);
         await page.goto('https://www.google.by/maps');
         await page.waitForTimeout(1000);
         await page.screenshot({ path: `./artifacts/screenshot-geo.png` });
