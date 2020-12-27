@@ -16,9 +16,12 @@ describe("Actions with Geolocation", () => {
         await page.goto('https://www.google.by/maps');
         await page.waitForTimeout(1000);
         await page.screenshot({ path: `./artifacts/screenshot-geo.png` });
+        await context.close();
+
     })
 
     afterAll(async() => {
         await browser.close();
     })
+
 })

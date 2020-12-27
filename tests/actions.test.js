@@ -22,6 +22,5 @@ describe('Actions at mainPage', () => {
 
     afterAll(async() => {
         await browser.close();
-        done();
     })
 })

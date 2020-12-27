@@ -16,11 +16,12 @@ describe('Mobile emulation', () => {
                 state: "attached"
             })
             //     await page.screenshot({ path: './artifacts/iphone11pro.png' });
+        await context.close();
     })
 
     afterAll(async() => {
         await browser.close();
-        done();
+
     })
 
 });
