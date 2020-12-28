@@ -16,6 +16,10 @@ describe("Actions with Geolocation", () => {
         await page.waitForTimeout(3000);
         await page.goto('https://www.google.by/maps');
         await page.waitForTimeout(1000);
+        await console.log(page.url())
+        await page.type('input#searchboxinput.tactile-searchbox-input', 'Minska ');
+        await page.keyboard.press('Enter');
+        await expect(page).toHaveText('h1 > span:nth-child(1)', 'Minska');
         await page.screenshot({ path: `./artifacts/screenshot-geo.png` });
         await context.close();
 
