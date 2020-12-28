@@ -14,7 +14,7 @@ describe('Mobile emulation', () => {
         await page.goto("http://todomvc-app-for-testing.surge.sh/");
         await expect(page).toEqualText("h1", "todos")
         await expect(page).toHaveSelector('"todos"', { state: "attached" })
-        await page.screenshot({ path: './artifacts/iphone11pro.png' });
+            //       await page.screenshot({ path: './artifacts/iphone11pro.png' });
         await context.close();
         await browser.close();
     })

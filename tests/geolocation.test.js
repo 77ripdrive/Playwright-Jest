@@ -13,10 +13,14 @@ describe("Actions with Geolocation", () => {
             colorScheme: 'dark',
         });
         const page = await context.newPage();
-        await page.waitForTimeout(3000);
-        await page.goto('https://www.google.by/maps');
-        await page.waitForTimeout(1000);
-        await page.screenshot({ path: `./artifacts/screenshot-geo.png` });
+        await page.goto('https://maps.google.com').waitForLoadState;
+        await console.log(page.url())
+        await page.click('input#searchboxinput.tactile-searchbox-input');
+        await page.type('input#searchboxinput.tactile-searchbox-input', 'Minska ');
+        await page.keyboard.press('Enter');
+        // await page.waitForSelector('h1 > span:nth-child(1)');
+        await expect(page).toHaveText('h1 > span:nth-child(1)', 'Minska');
+        //       await page.screenshot({ path: `./artifacts/screenshot-geo.png` });
         await context.close();
 
     })
